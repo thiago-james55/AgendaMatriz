@@ -41,9 +41,9 @@ public class Ano {
 		}
 	} // Final Metodo Bissexto
 
-    public String[][][] getAgenda() {
-        return agenda;
-    }
+    //public String[][][] getAgenda() {
+    //    return agenda;
+    //}
 
     public void AdicionarNaAgenda(int mes, int dia , int hora, String compromisso) {
         
@@ -94,19 +94,20 @@ public class Ano {
         
     } // final set agenda
     
-    public void ConsultarAgenda(int mes , int dia , int hora) {
+    public String ConsultarAgenda(int mes , int dia , int hora) {
         
         if (this.agenda[mes][dia][hora] != null) {
             
-            System.out.println(this.agenda[mes][dia][hora]);
+            return this.agenda[mes][dia][hora];
             
         } else {
             
-            System.out.println("Sem compromissos marcados neste dia!");
+            return "Sem compromissos marcados neste dia!";
             
         }
         
         
+                
     }
 
     public int getAno() {
