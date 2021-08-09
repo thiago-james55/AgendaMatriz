@@ -18,7 +18,7 @@ public class OperacoesAgenda {
     private ArrayList<Ano> agenda = new ArrayList<>();
 
     
-    public String ConsultaAgendaAnoMesDiaHora(int ano, int mes, int dia , int hora) {
+    public String ConsultaAgendaAnoMesDiaHora(int ano, int mes, int dia , int hora, boolean todos) {
         
         boolean existeAnoCadastrado = false;
         int posicaoAno = 0;
@@ -40,7 +40,7 @@ public class OperacoesAgenda {
         
         if (existeAnoCadastrado) {
             
-            return this.agenda.get(posicaoAno).ConsultarAgenda(mes, dia, hora);
+            return this.agenda.get(posicaoAno).ConsultarAgenda(mes, dia, hora,todos);
             
         } else {
             
@@ -54,8 +54,28 @@ public class OperacoesAgenda {
         
     }
 
-    public void CadastrarCompromisso(int ano, int mes, int dia , int hora) {
-        this.agenda = agenda;
+    public void CadastrarCompromisso(int ano, int mes, int dia , int hora,String compromisso) {
+        
+        for (int i = 0; i < this.agenda.size(); i++) {
+            
+            if (this.agenda.get(i).getAno() == ano) {
+                
+                this.agenda.get(i).AdicionarNaAgenda(mes, dia, hora, compromisso);
+                
+                if (!"Sem compromissos marcados neste dia!".equals(this.agenda.get(i).ConsultarAgenda(mes, dia, hora, false))) {
+                    
+                JOptionPane.showMessageDialog(null, "Compromisso salvo com sucesso!");
+                
+                }
+                
+                break;
+                
+            }
+            
+            
+            
+        }
+        
     }
     
     public void CadastrarNovoAno(int ano) {
@@ -64,7 +84,7 @@ public class OperacoesAgenda {
         
         boolean existeAnoCadastrado = false;
         
-         PROCURA_AGENDA: for (int i = 0; i <= this.agenda.size(); i++) {
+         PROCURA_AGENDA: for (int i = 0; i < this.agenda.size(); i++) {
             
              if (this.agenda.size() > 0) {
                  
@@ -110,7 +130,9 @@ public class OperacoesAgenda {
     }
 
     public ArrayList<Ano> getAgenda() {
-        Collections.sort(this.agenda, Collections.reverseOrder());
+        
+        
+        
         return agenda;
     }
     

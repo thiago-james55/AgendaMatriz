@@ -5,6 +5,9 @@
  */
 package agendamatriz;
 
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Pichau
@@ -21,6 +24,7 @@ public class TelaCompromissos extends javax.swing.JFrame {
         initComponents();
         agenda.CadastrarNovoAno(2021); // teste
         
+        
         listaDeAnos.removeAllItems();
         String ano;
         
@@ -29,6 +33,7 @@ public class TelaCompromissos extends javax.swing.JFrame {
         ano = Integer.toString(this.agenda.getAgenda().get(i).getAno());
         
         listaDeAnos.addItem(ano);
+        listaDeAnos1.addItem(ano);
             
         }
                 
@@ -80,10 +85,43 @@ public class TelaCompromissos extends javax.swing.JFrame {
         Dezembro = new javax.swing.JScrollPane();
         tabelaDezembro = new javax.swing.JTable();
         listaDeAnos = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
         Compromisso = new javax.swing.JLabel();
-        selecioneAhora = new javax.swing.JLabel();
-        listaDeHoras = new javax.swing.JComboBox<>();
         CadastrarCompromissos = new javax.swing.JPanel();
+        ConsultarCompromissos2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        painelConsulta1 = new javax.swing.JTabbedPane();
+        Janeiro1 = new javax.swing.JScrollPane();
+        tabelaJaneiro1 = new javax.swing.JTable();
+        Fevereiro1 = new javax.swing.JScrollPane();
+        tabelaFevereiro1 = new javax.swing.JTable();
+        Março1 = new javax.swing.JScrollPane();
+        tabelaMarço1 = new javax.swing.JTable();
+        Abril1 = new javax.swing.JScrollPane();
+        tabelaAbril1 = new javax.swing.JTable();
+        Maio1 = new javax.swing.JScrollPane();
+        tabelaMaio1 = new javax.swing.JTable();
+        Junho1 = new javax.swing.JScrollPane();
+        tabelaJunho1 = new javax.swing.JTable();
+        Julho1 = new javax.swing.JScrollPane();
+        tabelaJulho1 = new javax.swing.JTable();
+        Agosto1 = new javax.swing.JScrollPane();
+        tabelaAgosto1 = new javax.swing.JTable();
+        Setembro1 = new javax.swing.JScrollPane();
+        tabelaSetembro1 = new javax.swing.JTable();
+        Outubro1 = new javax.swing.JScrollPane();
+        tabelaOutubro1 = new javax.swing.JTable();
+        Novembro1 = new javax.swing.JScrollPane();
+        tabelaNovembro1 = new javax.swing.JTable();
+        Dezembro1 = new javax.swing.JScrollPane();
+        tabelaDezembro1 = new javax.swing.JTable();
+        listaDeAnos1 = new javax.swing.JComboBox<>();
+        selecioneAhora1 = new javax.swing.JLabel();
+        listaDeHoras1 = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        digitarCompromisso = new javax.swing.JTextArea();
+        salvarCompromisso = new javax.swing.JButton();
+        adicionarNovoAno = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -110,7 +148,7 @@ public class TelaCompromissos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Titutlo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Titutlo.setForeground(new java.awt.Color(255, 51, 51));
+        Titutlo.setForeground(new java.awt.Color(0, 0, 204));
         Titutlo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titutlo.setText("Agenda de Compromissos");
 
@@ -711,29 +749,8 @@ public class TelaCompromissos extends javax.swing.JFrame {
         });
 
         Compromisso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        selecioneAhora.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        selecioneAhora.setText("Selecione a Hora:");
-
-        listaDeHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" }));
-        listaDeHoras.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                listaDeHorasMouseMoved(evt);
-            }
-        });
-        listaDeHoras.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listaDeHorasMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                listaDeHorasMouseEntered(evt);
-            }
-        });
-        listaDeHoras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaDeHorasActionPerformed(evt);
-            }
-        });
+        Compromisso.setForeground(new java.awt.Color(0, 0, 204));
+        jScrollPane1.setViewportView(Compromisso);
 
         javax.swing.GroupLayout ConsultarCompromissos1Layout = new javax.swing.GroupLayout(ConsultarCompromissos1);
         ConsultarCompromissos1.setLayout(ConsultarCompromissos1Layout);
@@ -745,15 +762,12 @@ public class TelaCompromissos extends javax.swing.JFrame {
                     .addComponent(painelConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
                     .addGroup(ConsultarCompromissos1Layout.createSequentialGroup()
                         .addGroup(ConsultarCompromissos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Compromisso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)
                             .addGroup(ConsultarCompromissos1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(listaDeAnos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(selecioneAhora)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(listaDeHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         ConsultarCompromissos1Layout.setVerticalGroup(
@@ -762,28 +776,715 @@ public class TelaCompromissos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(ConsultarCompromissos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(listaDeAnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(ConsultarCompromissos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(selecioneAhora)
-                        .addComponent(listaDeHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(listaDeAnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Compromisso, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PainelAbas.addTab("Consultar", ConsultarCompromissos1);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Selecione o Ano:");
+
+        tabelaJaneiro1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaJaneiro1.setRowSelectionAllowed(false);
+        tabelaJaneiro1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaJaneiro1.getTableHeader().setReorderingAllowed(false);
+        tabelaJaneiro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaJaneiro1MouseClicked(evt);
+            }
+        });
+        Janeiro1.setViewportView(tabelaJaneiro1);
+        if (tabelaJaneiro1.getColumnModel().getColumnCount() > 0) {
+            tabelaJaneiro1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaJaneiro1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaJaneiro1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaJaneiro1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Janeiro", Janeiro1);
+
+        tabelaFevereiro1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaFevereiro1.setRowSelectionAllowed(false);
+        tabelaFevereiro1.getTableHeader().setReorderingAllowed(false);
+        tabelaFevereiro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaFevereiro1MouseClicked(evt);
+            }
+        });
+        Fevereiro1.setViewportView(tabelaFevereiro1);
+        tabelaFevereiro1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaFevereiro1.getColumnModel().getColumnCount() > 0) {
+            tabelaFevereiro1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaFevereiro1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaFevereiro1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaFevereiro1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Fevereiro", Fevereiro1);
+
+        tabelaMarço1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaMarço1.setRowSelectionAllowed(false);
+        tabelaMarço1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaMarço1MouseClicked(evt);
+            }
+        });
+        Março1.setViewportView(tabelaMarço1);
+        tabelaMarço1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaMarço1.getColumnModel().getColumnCount() > 0) {
+            tabelaMarço1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaMarço1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaMarço1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaMarço1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Março", Março1);
+
+        tabelaAbril1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaAbril1.setRowSelectionAllowed(false);
+        tabelaAbril1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaAbril1MouseClicked(evt);
+            }
+        });
+        Abril1.setViewportView(tabelaAbril1);
+        tabelaAbril1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaAbril1.getColumnModel().getColumnCount() > 0) {
+            tabelaAbril1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaAbril1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaAbril1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaAbril1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Abril", Abril1);
+
+        tabelaMaio1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaMaio1.setRowSelectionAllowed(false);
+        tabelaMaio1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaMaio1MouseClicked(evt);
+            }
+        });
+        Maio1.setViewportView(tabelaMaio1);
+        tabelaMaio1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaMaio1.getColumnModel().getColumnCount() > 0) {
+            tabelaMaio1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaMaio1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaMaio1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaMaio1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Maio", Maio1);
+
+        tabelaJunho1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaJunho1.setRowSelectionAllowed(false);
+        tabelaJunho1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaJunho1MouseClicked(evt);
+            }
+        });
+        Junho1.setViewportView(tabelaJunho1);
+        tabelaJunho1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaJunho1.getColumnModel().getColumnCount() > 0) {
+            tabelaJunho1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaJunho1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaJunho1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaJunho1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Junho", Junho1);
+
+        tabelaJulho1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaJulho1.setRowSelectionAllowed(false);
+        tabelaJulho1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaJulho1MouseClicked(evt);
+            }
+        });
+        Julho1.setViewportView(tabelaJulho1);
+        tabelaJulho1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaJulho1.getColumnModel().getColumnCount() > 0) {
+            tabelaJulho1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaJulho1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaJulho1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaJulho1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Julho", Julho1);
+
+        tabelaAgosto1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaAgosto1.setRowSelectionAllowed(false);
+        tabelaAgosto1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaAgosto1MouseClicked(evt);
+            }
+        });
+        Agosto1.setViewportView(tabelaAgosto1);
+        tabelaAgosto1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaAgosto1.getColumnModel().getColumnCount() > 0) {
+            tabelaAgosto1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaAgosto1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaAgosto1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaAgosto1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Agosto", Agosto1);
+
+        tabelaSetembro1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaSetembro1.setRowSelectionAllowed(false);
+        tabelaSetembro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaSetembro1MouseClicked(evt);
+            }
+        });
+        Setembro1.setViewportView(tabelaSetembro1);
+        tabelaSetembro1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaSetembro1.getColumnModel().getColumnCount() > 0) {
+            tabelaSetembro1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaSetembro1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaSetembro1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaSetembro1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Setembro", Setembro1);
+
+        tabelaOutubro1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaOutubro1.setRowSelectionAllowed(false);
+        tabelaOutubro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaOutubro1MouseClicked(evt);
+            }
+        });
+        Outubro1.setViewportView(tabelaOutubro1);
+        tabelaOutubro1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaOutubro1.getColumnModel().getColumnCount() > 0) {
+            tabelaOutubro1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaOutubro1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaOutubro1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaOutubro1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Outubro", Outubro1);
+
+        tabelaNovembro1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaNovembro1.setRowSelectionAllowed(false);
+        tabelaNovembro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaNovembro1MouseClicked(evt);
+            }
+        });
+        Novembro1.setViewportView(tabelaNovembro1);
+        tabelaNovembro1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaNovembro1.getColumnModel().getColumnCount() > 0) {
+            tabelaNovembro1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaNovembro1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaNovembro1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaNovembro1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Novembro", Novembro1);
+
+        tabelaDezembro1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4)},
+                { new Integer(5),  new Integer(6),  new Integer(7),  new Integer(8)},
+                { new Integer(9),  new Integer(10),  new Integer(11),  new Integer(12)},
+                { new Integer(13),  new Integer(14),  new Integer(15),  new Integer(16)},
+                { new Integer(17),  new Integer(18),  new Integer(19),  new Integer(20)},
+                { new Integer(21),  new Integer(22),  new Integer(23),  new Integer(24)},
+                { new Integer(25),  new Integer(26),  new Integer(27),  new Integer(28)},
+                { new Integer(29),  new Integer(30),  new Integer(31), null}
+            },
+            new String [] {
+                "Dia", "Dia", "Dia", "Dia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaDezembro1.setRowSelectionAllowed(false);
+        tabelaDezembro1.getTableHeader().setReorderingAllowed(false);
+        tabelaDezembro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaDezembro1MouseClicked(evt);
+            }
+        });
+        Dezembro1.setViewportView(tabelaDezembro1);
+        tabelaDezembro1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tabelaDezembro1.getColumnModel().getColumnCount() > 0) {
+            tabelaDezembro1.getColumnModel().getColumn(0).setResizable(false);
+            tabelaDezembro1.getColumnModel().getColumn(1).setResizable(false);
+            tabelaDezembro1.getColumnModel().getColumn(2).setResizable(false);
+            tabelaDezembro1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        painelConsulta1.addTab("Dezembro", Dezembro1);
+
+        listaDeAnos1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                listaDeAnos1MouseMoved(evt);
+            }
+        });
+        listaDeAnos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaDeAnos1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                listaDeAnos1MouseEntered(evt);
+            }
+        });
+        listaDeAnos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaDeAnos1ActionPerformed(evt);
+            }
+        });
+
+        selecioneAhora1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        selecioneAhora1.setForeground(new java.awt.Color(0, 0, 204));
+        selecioneAhora1.setText("Selecione a Hora:");
+
+        listaDeHoras1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" }));
+        listaDeHoras1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                listaDeHoras1MouseMoved(evt);
+            }
+        });
+        listaDeHoras1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaDeHoras1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                listaDeHoras1MouseEntered(evt);
+            }
+        });
+        listaDeHoras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaDeHoras1ActionPerformed(evt);
+            }
+        });
+
+        digitarCompromisso.setColumns(20);
+        digitarCompromisso.setRows(5);
+        jScrollPane3.setViewportView(digitarCompromisso);
+
+        salvarCompromisso.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        salvarCompromisso.setForeground(new java.awt.Color(0, 0, 204));
+        salvarCompromisso.setText("Salvar Compromisso");
+        salvarCompromisso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarCompromissoActionPerformed(evt);
+            }
+        });
+
+        adicionarNovoAno.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        adicionarNovoAno.setForeground(new java.awt.Color(0, 51, 204));
+        adicionarNovoAno.setText("Novo Ano");
+        adicionarNovoAno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adicionarNovoAnoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ConsultarCompromissos2Layout = new javax.swing.GroupLayout(ConsultarCompromissos2);
+        ConsultarCompromissos2.setLayout(ConsultarCompromissos2Layout);
+        ConsultarCompromissos2Layout.setHorizontalGroup(
+            ConsultarCompromissos2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ConsultarCompromissos2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ConsultarCompromissos2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelConsulta1, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ConsultarCompromissos2Layout.createSequentialGroup()
+                        .addGroup(ConsultarCompromissos2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(salvarCompromisso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ConsultarCompromissos2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(listaDeAnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(adicionarNovoAno)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(selecioneAhora1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(listaDeHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
+        );
+        ConsultarCompromissos2Layout.setVerticalGroup(
+            ConsultarCompromissos2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ConsultarCompromissos2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ConsultarCompromissos2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ConsultarCompromissos2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(selecioneAhora1)
+                        .addComponent(listaDeHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ConsultarCompromissos2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(listaDeAnos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adicionarNovoAno)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(salvarCompromisso)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout CadastrarCompromissosLayout = new javax.swing.GroupLayout(CadastrarCompromissos);
         CadastrarCompromissos.setLayout(CadastrarCompromissosLayout);
         CadastrarCompromissosLayout.setHorizontalGroup(
             CadastrarCompromissosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 499, Short.MAX_VALUE)
+            .addGroup(CadastrarCompromissosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CadastrarCompromissosLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(ConsultarCompromissos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         CadastrarCompromissosLayout.setVerticalGroup(
             CadastrarCompromissosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
+            .addGap(0, 379, Short.MAX_VALUE)
+            .addGroup(CadastrarCompromissosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CadastrarCompromissosLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(ConsultarCompromissos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         PainelAbas.addTab("Cadastrar", CadastrarCompromissos);
@@ -814,6 +1515,7 @@ public class TelaCompromissos extends javax.swing.JFrame {
 
     private void listaDeAnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDeAnosActionPerformed
         // TODO add your handling code here:
+               
         
     }//GEN-LAST:event_listaDeAnosActionPerformed
 
@@ -840,16 +1542,7 @@ public class TelaCompromissos extends javax.swing.JFrame {
     private void listaDeAnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeAnosMouseEntered
         // TODO add your handling code here:
         
-        listaDeAnos.removeAllItems();
-        String ano;
         
-        for (int i = 0; i < this.agenda.TamanhoAgenda(); i++) {
-            
-        ano = Integer.toString(this.agenda.getAgenda().get(i).getAno());
-        
-        listaDeAnos.addItem(ano);
-            
-        }
         
         
     }//GEN-LAST:event_listaDeAnosMouseEntered
@@ -865,104 +1558,355 @@ public class TelaCompromissos extends javax.swing.JFrame {
         
         int ano,mes,dia,hora;
         
+        int row,col;
+               
+        
+        boolean todos = true;
+        
         dia = 13;
         
         switch (painelConsulta.getSelectedIndex()) {
             
             case 0:
                 
-                dia = tabelaJaneiro.getSelectedRow();
+                row = tabelaJaneiro.getSelectedRow();
+                col = tabelaJaneiro.getSelectedColumn();
+                dia = (Integer) tabelaJaneiro.getValueAt(row, col);
                 break;
             
             case 1:
                 
-                dia = tabelaFevereiro.getSelectedRow();
+                row = tabelaFevereiro.getSelectedRow();
+                col = tabelaFevereiro.getSelectedColumn();
+                dia = (Integer) tabelaFevereiro.getValueAt(row, col);
                 break;
                 
             case 2:
                 
-                dia = tabelaMarço.getSelectedRow();
+                row = tabelaMarço.getSelectedRow();
+                col = tabelaMarço.getSelectedColumn();
+                dia = (Integer) tabelaMarço.getValueAt(row, col);
                 break;
                 
                 
             case 3:
                 
-                dia = tabelaAbril.getSelectedRow();
+                row = tabelaAbril.getSelectedRow();
+                col = tabelaAbril.getSelectedColumn();
+                dia = (Integer) tabelaAbril.getValueAt(row, col);
                 break;
                 
                 
             case 4:
                 
-                dia = tabelaMaio.getSelectedRow();
+                row = tabelaMaio.getSelectedRow();
+                col = tabelaMaio.getSelectedColumn();
+                dia = (Integer) tabelaMaio.getValueAt(row, col);
                 break;
                 
             case 5:
                 
-                dia = tabelaJunho.getSelectedRow();
+                row = tabelaJunho.getSelectedRow();
+                col = tabelaJunho.getSelectedColumn();
+                dia = (Integer) tabelaJunho.getValueAt(row, col);
                 break;
                 
             case 6:
                 
-                dia = tabelaJulho.getSelectedRow();
+                row = tabelaJulho.getSelectedRow();
+                col = tabelaJulho.getSelectedColumn();
+                dia = (Integer) tabelaJulho.getValueAt(row, col);
                 break;
                 
             case 7:
                 
-                dia = tabelaAgosto.getSelectedRow();
+                row = tabelaAgosto.getSelectedRow();
+                col = tabelaAgosto.getSelectedColumn();
+                dia = (Integer) tabelaAgosto.getValueAt(row, col);
                 break;
                 
                 
             case 8:
                 
-                dia = tabelaSetembro.getSelectedRow();
+                row = tabelaSetembro.getSelectedRow();
+                col = tabelaSetembro.getSelectedColumn();
+                dia = (Integer) tabelaSetembro.getValueAt(row, col);
                 break;
                 
                 
             case 9:
                 
-                dia = tabelaOutubro.getSelectedRow();
+                row = tabelaOutubro.getSelectedRow();
+                col = tabelaOutubro.getSelectedColumn();
+                dia = (Integer) tabelaOutubro.getValueAt(row, col);
                 break;
                 
             case 10:
                 
-                dia = tabelaNovembro.getSelectedRow();
+                row = tabelaNovembro.getSelectedRow();
+                col = tabelaNovembro.getSelectedColumn();
+                dia = (Integer) tabelaNovembro.getValueAt(row, col);
                 break;
                 
             case 11:
                 
-                dia = tabelaDezembro.getSelectedRow();
+                row = tabelaDezembro.getSelectedRow();
+                col = tabelaDezembro.getSelectedColumn();
+                dia = (Integer) tabelaDezembro.getValueAt(row, col);
                 break;    
             
         }
         
         ano = Integer.parseInt(listaDeAnos.getSelectedItem().toString());
         mes = painelConsulta.getSelectedIndex();
-        System.out.println(mes);
-        hora = listaDeHoras.getSelectedIndex();
+        
+        hora = 0; // aqui nao importa a hora pois vai mostrar todos os compromissos
         
         
-        return this.agenda.ConsultaAgendaAnoMesDiaHora(ano,mes,dia,hora);
+        return this.agenda.ConsultaAgendaAnoMesDiaHora(ano,mes,dia-1,hora,todos);
         
         
         
     }
     
-    private void listaDeHorasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeHorasMouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaDeHorasMouseMoved
-
-    private void listaDeHorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeHorasMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaDeHorasMouseClicked
-
-    private void listaDeHorasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeHorasMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaDeHorasMouseEntered
-
-    private void listaDeHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDeHorasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaDeHorasActionPerformed
-
+    private String indexesToStringInput() {
+        
+        int ano,mes,dia,hora;
+        
+        int row,col;
+               
+        
+        boolean todos = false;
+        
+        dia = 0;
+        
+        switch (painelConsulta1.getSelectedIndex()) {
+            
+            case 0:
+                
+                row = tabelaJaneiro1.getSelectedRow();
+                col = tabelaJaneiro1.getSelectedColumn();
+                dia = (Integer) tabelaJaneiro1.getValueAt(row, col);
+                break;
+            
+            case 1:
+                
+                row = tabelaFevereiro1.getSelectedRow();
+                col = tabelaFevereiro1.getSelectedColumn();
+                dia = (Integer) tabelaFevereiro1.getValueAt(row, col);
+                break;
+                
+            case 2:
+                
+                row = tabelaMarço1.getSelectedRow();
+                col = tabelaMarço1.getSelectedColumn();
+                dia = (Integer) tabelaMarço1.getValueAt(row, col);
+                break;
+                
+                
+            case 3:
+                
+                row = tabelaAbril1.getSelectedRow();
+                col = tabelaAbril1.getSelectedColumn();
+                dia = (Integer) tabelaAbril1.getValueAt(row, col);
+                break;
+                
+                
+            case 4:
+                
+                row = tabelaMaio1.getSelectedRow();
+                col = tabelaMaio1.getSelectedColumn();
+                dia = (Integer) tabelaMaio1.getValueAt(row, col);
+                break;
+                
+            case 5:
+                
+                row = tabelaJunho1.getSelectedRow();
+                col = tabelaJunho1.getSelectedColumn();
+                dia = (Integer) tabelaJunho1.getValueAt(row, col);
+                break;
+                
+            case 6:
+                
+                row = tabelaJulho1.getSelectedRow();
+                col = tabelaJulho1.getSelectedColumn();
+                dia = (Integer) tabelaJulho1.getValueAt(row, col);
+                break;
+                
+            case 7:
+                
+                row = tabelaAgosto1.getSelectedRow();
+                col = tabelaAgosto1.getSelectedColumn();
+                dia = (Integer) tabelaAgosto1.getValueAt(row, col);
+                break;
+                
+                
+            case 8:
+                
+                row = tabelaSetembro1.getSelectedRow();
+                col = tabelaSetembro1.getSelectedColumn();
+                dia = (Integer) tabelaSetembro1.getValueAt(row, col);
+                break;
+                
+                
+            case 9:
+                
+                row = tabelaOutubro1.getSelectedRow();
+                col = tabelaOutubro1.getSelectedColumn();
+                dia = (Integer) tabelaOutubro1.getValueAt(row, col);
+                break;
+                
+            case 10:
+                
+                row = tabelaNovembro1.getSelectedRow();
+                col = tabelaNovembro1.getSelectedColumn();
+                dia = (Integer) tabelaNovembro1.getValueAt(row, col);
+                break;
+                
+            case 11:
+                
+                row = tabelaDezembro1.getSelectedRow();
+                col = tabelaDezembro1.getSelectedColumn();
+                dia = (Integer) tabelaDezembro1.getValueAt(row, col);
+                break;    
+            
+        }
+        
+        ano = Integer.parseInt(listaDeAnos1.getSelectedItem().toString());
+        mes = painelConsulta1.getSelectedIndex();
+        hora = listaDeHoras1.getSelectedIndex();
+        
+        
+        
+        String mudarBotao = "Salvar Compromisso - Dia " + dia + "/" + (mes+1); 
+        
+        salvarCompromisso.setText(mudarBotao);
+        
+        return this.agenda.ConsultaAgendaAnoMesDiaHora(ano,mes,dia-1,hora,todos);
+        
+        
+        
+    }
+    
+    private int[] indexesToInt() {
+        
+        int[] indexes = new int[4];
+        int ano,mes,dia,hora;
+        int row,col;
+        
+        dia = 0;
+        
+        switch (painelConsulta1.getSelectedIndex()) {
+            
+            case 0:
+                
+                row = tabelaJaneiro1.getSelectedRow();
+                col = tabelaJaneiro1.getSelectedColumn();
+                dia = (Integer) tabelaJaneiro1.getValueAt(row, col);
+                break;
+            
+            case 1:
+                
+                row = tabelaFevereiro1.getSelectedRow();
+                col = tabelaFevereiro1.getSelectedColumn();
+                dia = (Integer) tabelaFevereiro1.getValueAt(row, col);
+                break;
+                
+            case 2:
+                
+                row = tabelaMarço1.getSelectedRow();
+                col = tabelaMarço1.getSelectedColumn();
+                dia = (Integer) tabelaMarço1.getValueAt(row, col);
+                break;
+                
+                
+            case 3:
+                
+                row = tabelaAbril1.getSelectedRow();
+                col = tabelaAbril1.getSelectedColumn();
+                dia = (Integer) tabelaAbril1.getValueAt(row, col);
+                break;
+                
+                
+            case 4:
+                
+                row = tabelaMaio1.getSelectedRow();
+                col = tabelaMaio1.getSelectedColumn();
+                dia = (Integer) tabelaMaio1.getValueAt(row, col);
+                break;
+                
+            case 5:
+                
+                row = tabelaJunho1.getSelectedRow();
+                col = tabelaJunho1.getSelectedColumn();
+                dia = (Integer) tabelaJunho1.getValueAt(row, col);
+                break;
+                
+            case 6:
+                
+                row = tabelaJulho1.getSelectedRow();
+                col = tabelaJulho1.getSelectedColumn();
+                dia = (Integer) tabelaJulho1.getValueAt(row, col);
+                break;
+                
+            case 7:
+                
+                row = tabelaAgosto1.getSelectedRow();
+                col = tabelaAgosto1.getSelectedColumn();
+                dia = (Integer) tabelaAgosto1.getValueAt(row, col);
+                break;
+                
+                
+            case 8:
+                
+                row = tabelaSetembro1.getSelectedRow();
+                col = tabelaSetembro1.getSelectedColumn();
+                dia = (Integer) tabelaSetembro1.getValueAt(row, col);
+                break;
+                
+                
+            case 9:
+                
+                row = tabelaOutubro1.getSelectedRow();
+                col = tabelaOutubro1.getSelectedColumn();
+                dia = (Integer) tabelaOutubro1.getValueAt(row, col);
+                break;
+                
+            case 10:
+                
+                row = tabelaNovembro1.getSelectedRow();
+                col = tabelaNovembro1.getSelectedColumn();
+                dia = (Integer) tabelaNovembro1.getValueAt(row, col);
+                break;
+                
+            case 11:
+                
+                row = tabelaDezembro1.getSelectedRow();
+                col = tabelaDezembro1.getSelectedColumn();
+                dia = (Integer) tabelaDezembro1.getValueAt(row, col);
+                break;    
+            
+        }
+        
+        ano = Integer.parseInt(listaDeAnos1.getSelectedItem().toString());
+        mes = painelConsulta1.getSelectedIndex();
+        hora = listaDeHoras1.getSelectedIndex();
+        
+        indexes[0] = ano; 
+        indexes[1] = mes;
+        indexes[2] = dia;
+        indexes[3] = hora;
+       
+        
+        return indexes;
+        
+        
+        
+        
+        
+        
+    }
+    
     private void tabelaFevereiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaFevereiroMouseClicked
         // TODO add your handling code here:
         
@@ -1019,6 +1963,164 @@ public class TelaCompromissos extends javax.swing.JFrame {
         // TODO add your handling code here:
         Compromisso.setText(this.indexesToString());
     }//GEN-LAST:event_tabelaDezembroMouseClicked
+
+    private void tabelaJaneiro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaJaneiro1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaJaneiro1MouseClicked
+
+    private void tabelaFevereiro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaFevereiro1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaFevereiro1MouseClicked
+
+    private void tabelaMarço1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMarço1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaMarço1MouseClicked
+
+    private void tabelaAbril1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaAbril1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaAbril1MouseClicked
+
+    private void tabelaMaio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMaio1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaMaio1MouseClicked
+
+    private void tabelaJunho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaJunho1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaJunho1MouseClicked
+
+    private void tabelaJulho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaJulho1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaJulho1MouseClicked
+
+    private void tabelaAgosto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaAgosto1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaAgosto1MouseClicked
+
+    private void tabelaSetembro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaSetembro1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaSetembro1MouseClicked
+
+    private void tabelaOutubro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaOutubro1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaOutubro1MouseClicked
+
+    private void tabelaNovembro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaNovembro1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaNovembro1MouseClicked
+
+    private void tabelaDezembro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaDezembro1MouseClicked
+        // TODO add your handling code here:
+        digitarCompromisso.setText(this.indexesToStringInput());
+    }//GEN-LAST:event_tabelaDezembro1MouseClicked
+
+    private void listaDeAnos1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeAnos1MouseMoved
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_listaDeAnos1MouseMoved
+
+    private void listaDeAnos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeAnos1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaDeAnos1MouseClicked
+
+    private void listaDeAnos1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeAnos1MouseEntered
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_listaDeAnos1MouseEntered
+
+    private void listaDeAnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDeAnos1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaDeAnos1ActionPerformed
+
+    private void listaDeHoras1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeHoras1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaDeHoras1MouseMoved
+
+    private void listaDeHoras1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeHoras1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaDeHoras1MouseClicked
+
+    private void listaDeHoras1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDeHoras1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaDeHoras1MouseEntered
+
+    private void listaDeHoras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDeHoras1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaDeHoras1ActionPerformed
+
+    private void adicionarNovoAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarNovoAnoActionPerformed
+        // TODO add your handling code here:
+        
+        try {
+            
+        int newAno = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ano que deseja cadastrar!"));
+        this.agenda.CadastrarNovoAno(newAno);
+        
+        } catch (NumberFormatException number) {
+            
+            JOptionPane.showMessageDialog(null, "Erro! Anos precisam ser em formato numerico! Ex: 2001 , 2004 , 2012");
+            
+            
+        }
+        
+        listaDeAnos.removeAllItems();
+        String[] ano = new String[this.agenda.TamanhoAgenda()];
+        
+        
+        for (int i = 0; i < this.agenda.TamanhoAgenda(); i++) {
+            
+        ano[i] = Integer.toString(this.agenda.getAgenda().get(i).getAno());
+                            
+        }
+        
+        Arrays.sort(ano);
+        
+        for (String ano1 : ano) {
+            
+            listaDeAnos.addItem(ano1);
+        }
+        
+        
+        listaDeAnos1.removeAllItems();
+        String[] ano2 = new String[this.agenda.TamanhoAgenda()];
+        
+        
+        for (int i = 0; i < this.agenda.TamanhoAgenda(); i++) {
+            
+        ano2[i] = Integer.toString(this.agenda.getAgenda().get(i).getAno());
+                            
+        }
+        
+        Arrays.sort(ano2);
+        
+        for (String ano1 : ano2) {
+            
+            listaDeAnos1.addItem(ano1);
+        }
+        
+        
+    }//GEN-LAST:event_adicionarNovoAnoActionPerformed
+
+    private void salvarCompromissoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarCompromissoActionPerformed
+        // TODO add your handling code here:
+        
+        int[] indexes = this.indexesToInt();
+                      
+        
+        this.agenda.CadastrarCompromisso(indexes[0],indexes[1],indexes[2]-1,indexes[3], digitarCompromisso.getText());
+        
+    }//GEN-LAST:event_salvarCompromissoActionPerformed
     
     
     
@@ -1059,44 +2161,77 @@ public class TelaCompromissos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane Abril;
+    private javax.swing.JScrollPane Abril1;
     private javax.swing.JScrollPane Agosto;
+    private javax.swing.JScrollPane Agosto1;
     private javax.swing.JPanel CadastrarCompromissos;
     private javax.swing.JLabel Compromisso;
     private javax.swing.JPanel ConsultarCompromissos1;
+    private javax.swing.JPanel ConsultarCompromissos2;
     private javax.swing.JScrollPane Dezembro;
+    private javax.swing.JScrollPane Dezembro1;
     private javax.swing.JScrollPane Fevereiro;
+    private javax.swing.JScrollPane Fevereiro1;
     private javax.swing.JScrollPane Janeiro;
+    private javax.swing.JScrollPane Janeiro1;
     private javax.swing.JScrollPane Julho;
+    private javax.swing.JScrollPane Julho1;
     private javax.swing.JScrollPane Junho;
+    private javax.swing.JScrollPane Junho1;
     private javax.swing.JScrollPane Maio;
+    private javax.swing.JScrollPane Maio1;
     private javax.swing.JScrollPane Março;
+    private javax.swing.JScrollPane Março1;
     private javax.swing.JScrollPane Novembro;
+    private javax.swing.JScrollPane Novembro1;
     private javax.swing.JScrollPane Outubro;
+    private javax.swing.JScrollPane Outubro1;
     private javax.swing.JTabbedPane PainelAbas;
     private javax.swing.JScrollPane Setembro;
+    private javax.swing.JScrollPane Setembro1;
     private javax.swing.JLabel Titutlo;
+    private javax.swing.JButton adicionarNovoAno;
+    private javax.swing.JTextArea digitarCompromisso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> listaDeAnos;
-    private javax.swing.JComboBox<String> listaDeHoras;
+    private javax.swing.JComboBox<String> listaDeAnos1;
+    private javax.swing.JComboBox<String> listaDeHoras1;
     private javax.swing.JTabbedPane painelConsulta;
-    private javax.swing.JLabel selecioneAhora;
+    private javax.swing.JTabbedPane painelConsulta1;
+    private javax.swing.JButton salvarCompromisso;
+    private javax.swing.JLabel selecioneAhora1;
     private javax.swing.JTable tabelaAbril;
+    private javax.swing.JTable tabelaAbril1;
     private javax.swing.JTable tabelaAgosto;
+    private javax.swing.JTable tabelaAgosto1;
     private javax.swing.JTable tabelaDezembro;
+    private javax.swing.JTable tabelaDezembro1;
     private javax.swing.JTable tabelaFevereiro;
+    private javax.swing.JTable tabelaFevereiro1;
     private javax.swing.JTable tabelaJaneiro;
+    private javax.swing.JTable tabelaJaneiro1;
     private javax.swing.JTable tabelaJulho;
+    private javax.swing.JTable tabelaJulho1;
     private javax.swing.JTable tabelaJunho;
+    private javax.swing.JTable tabelaJunho1;
     private javax.swing.JTable tabelaMaio;
+    private javax.swing.JTable tabelaMaio1;
     private javax.swing.JTable tabelaMarço;
+    private javax.swing.JTable tabelaMarço1;
     private javax.swing.JTable tabelaNovembro;
+    private javax.swing.JTable tabelaNovembro1;
     private javax.swing.JTable tabelaOutubro;
+    private javax.swing.JTable tabelaOutubro1;
     private javax.swing.JTable tabelaSetembro;
+    private javax.swing.JTable tabelaSetembro1;
     // End of variables declaration//GEN-END:variables
 }

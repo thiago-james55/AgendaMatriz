@@ -5,6 +5,8 @@
  */
 package agendamatriz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Pichau
@@ -55,27 +57,27 @@ public class Ano {
           
         
         //Serie de testes para ver se o dia é valido!
-        if (!this.bissexto && mes == 02 && dia > 28 ) {
+        if (!this.bissexto && mes == 1 && dia > 27 ) {
             
             diaValido = false;
-            System.out.println("Erro! Dia maximo em fevereiro neste ano é 28!");
+            JOptionPane.showMessageDialog(null, "Erro! Dia maximo em fevereiro neste ano é 28!");
             
-        } else if (this.bissexto && mes == 02 && dia > 29) {
-            
-            diaValido = false;
-            System.out.println("Erro! Dia maximo em fevereiro neste ano é 29!");
-            
-        } else if ( (mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30 ) {
+        } else if (this.bissexto && mes == 1 && dia > 28) {
             
             diaValido = false;
-            System.out.println("Erro! Dia maximo deste mês é 30!");
+            JOptionPane.showMessageDialog(null, "Erro! Dia maximo em fevereiro neste ano é 29!");
+            
+        } else if ( (mes == 3 || mes == 5 || mes == 8 || mes == 10) && dia > 29 ) {
+            
+            diaValido = false;
+            JOptionPane.showMessageDialog(null, "Erro! Dia maximo deste mês é 30!");
                         
         } 
         
         if (hora > 23) {
             
             diaValido = false;
-            System.out.println("Erro! Hora maxima permitida é 23!");
+            JOptionPane.showMessageDialog(null, "Erro! Hora maxima permitida é 23!");
             
         }
         
@@ -94,17 +96,64 @@ public class Ano {
         
     } // final set agenda
     
-    public String ConsultarAgenda(int mes , int dia , int hora) {
+    public String ConsultarAgenda(int mes , int dia , int hora, boolean todos) {
         
-        if (this.agenda[mes][dia][hora] != null) {
+        String semCompromissos = "Sem compromissos marcados neste dia!";
+        boolean existeCompromissos = false;
+        
+        for (int i = 0; i < 24; i++) {
             
-            return this.agenda[mes][dia][hora];
+            if (this.agenda[mes][dia][i] != null) {
+                
+                existeCompromissos = true;
+                
+            }
+            
+        }
+        
+        if (existeCompromissos) {
+            
+            if (todos) {
+                
+                String compromissos = "<html> ";
+                
+                for (int i = 0; i < 24; i++) {
+            
+                if (this.agenda[mes][dia][i] != null) {
+                
+                    compromissos += (i) +":00 - " + this.agenda[mes][dia][i] + "<br>" ;
+                
+                }
+            
+                }
+                
+                compromissos += " </html>";
+                
+                return compromissos;
+                     
+            
+            
+            } else {
+            
+            if (this.agenda[mes][dia][hora] != null) {
+            
+                return this.agenda[mes][dia][hora];
+            
+            } else {
+            
+            return semCompromissos;
+            
+            }
+        
+            }
             
         } else {
             
-            return "Sem compromissos marcados neste dia!";
+            return semCompromissos;
             
         }
+        
+        
         
         
                 
